@@ -25,8 +25,15 @@ import {
   GraduationCap,
   BrainCircuit,
   Zap,
+  Shield,
+  MapPin,
+  Music,
+  Image as ImageIcon,
+  Download,
+  Pin,
+  Clock,
 } from 'lucide-react';
-import { ChatMessage } from '../types';
+import { ChatMessage, DeviceConfig } from '../types';
 
 interface TerminalViewProps {
   messages: ChatMessage[];
@@ -35,6 +42,10 @@ interface TerminalViewProps {
   onOpenTeachModal: () => void;
   onOpenDriveModal: () => void;
   onOpenTraining?: () => void;
+  onOpenMasterRule?: () => void;
+  onOpenImageGen?: () => void;
+  onOpenVoiceSettings?: () => void;
+  deviceConfig?: DeviceConfig;
   onStartVoice: () => void;
   isProcessing: boolean;
   isListening: boolean;
@@ -58,6 +69,10 @@ export function TerminalView({
   onOpenTeachModal,
   onOpenDriveModal,
   onOpenTraining,
+  onOpenMasterRule,
+  onOpenImageGen,
+  onOpenVoiceSettings,
+  deviceConfig,
   onStartVoice,
   isProcessing,
   isListening,
@@ -123,6 +138,10 @@ export function TerminalView({
   };
 
   const quickCommands = [
+    { label: '📊 zdaj raport na dzisiaj', cmd: 'zdaj raport na dzisiaj' },
+    { label: '🛡️ reguły', cmd: 'pokaż główne reguły' },
+    { label: '📍 lokalizacja', cmd: 'jaka jest moja lokalizacja?' },
+    { label: '🎵 muzyka', cmd: 'włącz moją muzykę' },
     { label: 'cześć', cmd: 'cześć' },
     { label: 'godzina', cmd: 'godzina' },
     { label: '🔥 slang: rizz & sigma', cmd: 'co oznacza rizz, sigma i rel?' },
@@ -159,6 +178,32 @@ export function TerminalView({
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Voice Settings Button */}
+          {onOpenVoiceSettings && (
+            <button
+              id="btn-terminal-voice-settings"
+              onClick={onOpenVoiceSettings}
+              className="flex items-center gap-1 px-2 py-1 rounded bg-slate-800 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500/40 text-cyan-300 text-[11px] font-sans font-medium transition-all cursor-pointer"
+              title="Kalibracja głosu męskiego & ludzkiego Jarvis"
+            >
+              <Volume2 className="w-3 h-3 text-cyan-400" />
+              <span className="hidden lg:inline">Głos Męski</span>
+            </button>
+          )}
+
+          {/* Master Rule & Device Config Button */}
+          {onOpenMasterRule && (
+            <button
+              id="btn-terminal-master-rule"
+              onClick={onOpenMasterRule}
+              className="flex items-center gap-1 px-2.5 py-1 rounded bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/25 text-[11px] font-sans font-bold transition-all shadow-[0_0_10px_rgba(6,182,212,0.2)] cursor-pointer"
+              title="Główna Reguła, Lokalizacja & Odtwarzacz Muzyki"
+            >
+              <Shield className="w-3 h-3 text-cyan-400" />
+              <span className="hidden md:inline">Reguła & Urządzenie</span>
+            </button>
+          )}
+
           {/* Training Button */}
           {onOpenTraining && (
             <button
@@ -218,6 +263,16 @@ export function TerminalView({
             <span className="hidden md:inline">
               {isConversationMode ? 'Zakończ rozmowę' : 'Tryb Dialogu'}
             </span>
+          </button>
+
+          <button
+            id="btn-quick-image-gen"
+            onClick={onOpenImageGen}
+            className="flex items-center gap-1 px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 transition-colors cursor-pointer"
+            title="Otwórz generator obrazów i grafik Stark AI"
+          >
+            <ImageIcon className="w-3 h-3 text-cyan-400" />
+            <span className="hidden sm:inline">Generuj Obraz</span>
           </button>
 
           <button
@@ -323,6 +378,61 @@ export function TerminalView({
                     </div>
                   )}
 
+                  {/* Generated Image Attachment if Image Generator was used */}
+                  {msg.generatedImageUrl && (
+                    <div className="relative inline-block rounded-xl overflow-hidden border border-cyan-500/40 group/img bg-slate-950/90 my-2 max-w-md shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                      <div className="p-2 border-b border-cyan-500/20 bg-slate-900/60 flex items-center justify-between text-[11px] font-mono text-cyan-300">
+                        <span className="flex items-center gap-1.5 font-bold">
+                          <ImageIcon className="w-3.5 h-3.5 text-cyan-400" />
+                          <span>STARK AI IMAGE SYNTHESIS</span>
+                        </span>
+                        {msg.imageStyle && (
+                          <span className="px-1.5 py-0.2 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300 text-[9px]">
+                            {msg.imageStyle}
+                          </span>
+                        )}
+                      </div>
+                      <div className="relative group">
+                        <img
+                          src={msg.generatedImageUrl}
+                          alt={msg.imagePrompt || 'Wygenerowany obraz'}
+                          referrerPolicy="no-referrer"
+                          className="max-h-72 w-full object-contain rounded cursor-pointer hover:opacity-95 transition-opacity"
+                          onClick={() => setPreviewImage(msg.generatedImageUrl || null)}
+                        />
+                        <div className="absolute bottom-2 right-2 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <a
+                            href={msg.generatedImageUrl}
+                            download={`jarvis-generated-${Date.now()}.png`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-slate-950/90 hover:bg-cyan-950 text-cyan-300 text-[10px] px-2 py-1 rounded-md flex items-center gap-1 border border-cyan-500/40 shadow-md"
+                            title="Pobierz obraz"
+                          >
+                            <Download className="w-3 h-3" /> Pobierz
+                          </a>
+                          <button
+                            onClick={() => setPreviewImage(msg.generatedImageUrl || null)}
+                            className="bg-slate-950/90 hover:bg-cyan-950 text-cyan-300 text-[10px] px-2 py-1 rounded-md flex items-center gap-1 border border-cyan-500/40 shadow-md"
+                            title="Powiększ obraz"
+                          >
+                            <Maximize2 className="w-3 h-3" /> Powiększ
+                          </button>
+                        </div>
+                      </div>
+                      {msg.imagePrompt && (
+                        <div className="p-2 text-[11px] text-slate-300 font-sans border-t border-slate-800 bg-slate-950/60 flex items-center justify-between">
+                          <span className="truncate italic">"{msg.imagePrompt}"</span>
+                          {msg.imageAspectRatio && (
+                            <span className="text-[10px] text-slate-500 font-mono shrink-0 ml-2">
+                              {msg.imageAspectRatio}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <div>{msg.text}</div>
 
                   {msg.autoLearnedFact && (
@@ -360,15 +470,48 @@ export function TerminalView({
                         <Sparkles className="w-2.5 h-2.5 text-purple-400" /> Gemini AI
                       </span>
                     )}
+                    <span className="inline-flex items-center gap-1 text-[10px] text-slate-400 font-sans px-1.5 py-0.5 bg-slate-900 border border-slate-700/60 rounded">
+                      <Clock className="w-2.5 h-2.5 text-cyan-400" /> 14 dni pamięci
+                    </span>
                   </div>
                 </div>
-                <button
-                  onClick={() => copyText(msg.id, msg.text)}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-slate-500 hover:text-cyan-400"
-                  title="Kopiuj odpowiedź"
-                >
-                  {copiedId === msg.id ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                </button>
+                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button
+                    onClick={async () => {
+                      try {
+                        await fetch('/api/jarvis/permanent-notes', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            title: `Wskazówka Jarvisa (${msg.timestamp || 'Czat'})`,
+                            content: msg.text,
+                            type: 'tip',
+                            category: 'Wskazówki',
+                          }),
+                        });
+                        setCopiedId(`pin-${msg.id}`);
+                        setTimeout(() => setCopiedId(null), 2000);
+                      } catch (e) {
+                        console.warn('Pin error:', e);
+                      }
+                    }}
+                    className="p-1 text-slate-400 hover:text-amber-300 transition-colors"
+                    title="Zapisz tę odpowiedź jako trwałą wskazówkę (zostaje na stałe)"
+                  >
+                    {copiedId === `pin-${msg.id}` ? (
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    ) : (
+                      <Pin className="w-3.5 h-3.5 text-amber-400" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => copyText(msg.id, msg.text)}
+                    className="p-1 text-slate-500 hover:text-cyan-400 transition-colors"
+                    title="Kopiuj odpowiedź"
+                  >
+                    {copiedId === msg.id ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
               </div>
             ) : (
               <div className="text-xs text-slate-500 italic pl-6 py-0.5">
@@ -460,7 +603,7 @@ export function TerminalView({
       </div>
 
       {/* Input Form matching Python `Ty > ` */}
-      <form onSubmit={handleSubmit} className="p-3 bg-slate-900 border-t border-slate-800 flex items-center gap-2 relative">
+      <form onSubmit={handleSubmit} className="p-3 bg-slate-900 border-t border-slate-800 flex items-center gap-2 relative mb-24 lg:mb-0">
         <span className="text-emerald-400 font-bold text-sm select-none pl-1">Ty &gt;</span>
         <input
           ref={inputRef}

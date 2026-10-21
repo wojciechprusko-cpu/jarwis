@@ -71,9 +71,19 @@ export function MicPermissionModal({ isOpen, onGranted, onClose }: MicPermission
           </div>
         </div>
 
-        <p className="text-sm text-slate-300 leading-relaxed mb-4">
+        <p className="text-sm text-slate-300 leading-relaxed mb-3">
           Przed rozpoczęciem rozmowy głosowej z asystentem Jarvis, musisz zezwolić przeglądarce na dostęp do Twojego mikrofonu.
         </p>
+
+        <div className="p-3 mb-4 rounded-xl bg-slate-950/70 border border-cyan-500/30 text-xs text-slate-300 space-y-1.5">
+          <div className="font-semibold text-cyan-300 flex items-center gap-1.5">
+            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+            Wskazówka dla telefonów (iOS & Android):
+          </div>
+          <p className="text-[11px] text-slate-400 leading-relaxed">
+            Po kliknięciu przycisku poniżej, Twoja przeglądarka (Safari / Chrome) wyświetli zapytanie systemowe. Kliknij <strong className="text-white">"Zezwól"</strong> / <strong className="text-white">"Allow"</strong>, aby Jarvis mógł Cię słyszeć.
+          </p>
+        </div>
 
         {errorMsg && (
           <div className="p-3 mb-4 rounded-xl bg-red-950/60 border border-red-500/40 text-red-300 text-xs flex items-start gap-2">

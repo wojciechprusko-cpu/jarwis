@@ -22,6 +22,18 @@ class SoundFX {
     return this.ctx;
   }
 
+  // Pre-warms / unlocks AudioContext on touch/click for mobile browsers (iOS & Android)
+  public unlockAudio() {
+    try {
+      const ctx = this.getContext();
+      if (ctx && ctx.state === 'suspended') {
+        ctx.resume();
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
   public setMuted(muted: boolean) {
     this.isMuted = muted;
   }

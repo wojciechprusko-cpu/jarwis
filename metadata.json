@@ -1,6 +1,6 @@
 {
   "name": "Advanced Jarvis AI",
   "description": "Zaawansowany asystent głosowy i terminalowy Jarvis w języku polskim z pamięcią komend, integracją Google Drive, wizją ekranu i sztuczną inteligencją.",
-  "requestFramePermissions": ["microphone", "display-capture"],
+  "requestFramePermissions": ["microphone", "display-capture", "geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

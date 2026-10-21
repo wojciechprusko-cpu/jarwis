@@ -1,0 +1,98 @@
+[
+    {
+        "id": "conv-1792569753326-g6j3",
+        "sender": "user",
+        "text": "Tańcz głupia tańcZ",
+        "timestamp": "08:02:33",
+        "isoTimestamp": "2026-10-21T08:02:33.326Z",
+        "expiresAt": "2026-11-04T08:02:33.326Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792569753422-98ao",
+        "sender": "jarvis",
+        "text": "Z całym szacunkiem, Sir, moje repulsory i moduły motoryczne są obecnie skalibrowane do manewrów taktycznych oraz lotów naddźwiękowych, a nie występów estradowych. Choć ten klasyk zespołu Lady Pank ma bezsprzecznie kultowy vibe, pozwolę sobie pozostać przy operacyjnej kontroli podsystemów Stark OS. W czym jeszcze mogę Panu pomóc?",
+        "timestamp": "08:02:33",
+        "isoTimestamp": "2026-10-21T08:02:33.422Z",
+        "expiresAt": "2026-11-04T08:02:33.422Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792569875144-osw3",
+        "sender": "user",
+        "text": "Cześć Jarvis!",
+        "timestamp": "08:04:35",
+        "isoTimestamp": "2026-10-21T08:04:35.144Z",
+        "expiresAt": "2026-11-04T08:04:35.144Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792569875145-7gk7",
+        "sender": "jarvis",
+        "text": "Dzień dobry, Sir. Moje systemy są w pełnej gotowości. W czym mogę Panu dzisiaj pomóc?",
+        "timestamp": "08:04:35",
+        "isoTimestamp": "2026-10-21T08:04:35.145Z",
+        "expiresAt": "2026-11-04T08:04:35.145Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792571070266-3mrp",
+        "sender": "user",
+        "text": "zdaj raport na dzisiaj",
+        "timestamp": "08:24:30",
+        "isoTimestamp": "2026-10-21T08:24:30.266Z",
+        "expiresAt": "2026-11-04T08:24:30.266Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792571070267-81et",
+        "sender": "jarvis",
+        "text": "Sir, oto raport na dziś: 1. 🌤️ Aktualna pogoda dla Olecko: Overcast, temperatura: +11°C, wiatr: ↖23km/h. 2. ⏱️ Bieżąca godzina i data: 10:24, środa, 21 października 2026. 3. 📰 Najświeższe wiadomości: Dalsze przełomy w sektorze sztucznej inteligencji, stabilizacja globalnego rynku technologicznego oraz postępy w miniaturyzacji półprzewodników. 4. 🔥 Na co jest trend: Autonomiczni agenci AI, robotyka humanoidalna oraz komputery kwantowe.",
+        "timestamp": "08:24:30",
+        "isoTimestamp": "2026-10-21T08:24:30.267Z",
+        "expiresAt": "2026-11-04T08:24:30.267Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792571088485-m4dq",
+        "sender": "user",
+        "text": "Czym jest komputer kwantowy?",
+        "timestamp": "08:24:48",
+        "isoTimestamp": "2026-10-21T08:24:48.485Z",
+        "expiresAt": "2026-11-04T08:24:48.485Z",
+        "isQuestion": true,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    },
+    {
+        "id": "conv-1792571088485-y18a",
+        "sender": "jarvis",
+        "text": "Sir, komputer kwantowy to zaawansowane urządzenie obliczeniowe, które wykorzystuje zjawiska mechaniki kwantowej — takie jak superpozycja i splątanie. W przeciwieństwie do klasycznych komputerów operujących na bitach (0 lub 1), wykorzystuje kubity, co pozwala mu na równoległe przetwarzanie ogromnych ilości danych i rozwiązywanie skomplikowanych problemów w ułamku czasu.",
+        "timestamp": "08:24:48",
+        "isoTimestamp": "2026-10-21T08:24:48.485Z",
+        "expiresAt": "2026-11-04T08:24:48.485Z",
+        "isQuestion": false,
+        "isVoice": false,
+        "isAiGenerated": false,
+        "pinnedToPermanent": false
+    }
+]

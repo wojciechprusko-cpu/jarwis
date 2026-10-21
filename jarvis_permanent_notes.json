@@ -1,0 +1,133 @@
+[
+    {
+        "id": "blueprint-video-1",
+        "title": "Wzorzec / Referencja Wideo 1: Rick i Morty - Minecraft [Dubbing PL]",
+        "content": "Materiał źródłowy i wzorzec referencyjny: https://youtu.be/mHFEqM6UDV4 (ID: mHFEqM6UDV4). Słynna sekwencja dialogowa i wątek Minecrafta w polskim dubbingu (Sezon 3 Odcinek 10). Jarvis wykorzystuje ten wzorzec jako bazę odniesień popkulturowych, humoru naukowego, mechanik craftingowych i błyskotliwych dialogów.",
+        "type": "blueprint",
+        "source": "user_blueprint",
+        "createdAt": "2026-09-01T10:17:00.000Z",
+        "isPermanent": true,
+        "category": "Wzorce Multimedialne",
+        "tags": [
+            "wzorzec",
+            "wideo",
+            "youtube",
+            "rick-and-morty",
+            "minecraft",
+            "dubbing-pl"
+        ],
+        "videoUrl": "https://youtu.be/mHFEqM6UDV4?si=kEreAVuf1ezlcmml",
+        "videoId": "mHFEqM6UDV4",
+        "isBlueprint": true
+    },
+    {
+        "id": "blueprint-video-2",
+        "title": "Wzorzec / Referencja Wideo 2: Materiał Źródłowy i Referencyjny (ID: 2V3ZZepteeE)",
+        "content": "Materiał źródłowy i wzorzec referencyjny: https://youtu.be/2V3ZZepteeE (ID: 2V3ZZepteeE). Podłączony do systemów Stark OS i Gemini AI jako stały punkt odniesienia wiedzy i wzorzec analityczny dla asystenta Jarvis.",
+        "type": "blueprint",
+        "source": "user_blueprint",
+        "createdAt": "2026-09-01T10:17:00.000Z",
+        "isPermanent": true,
+        "category": "Wzorce Multimedialne",
+        "tags": [
+            "wzorzec",
+            "wideo",
+            "youtube",
+            "referencja",
+            "dane-źródłowe"
+        ],
+        "videoUrl": "https://youtu.be/2V3ZZepteeE?si=MaNphTgKKHx02LbX",
+        "videoId": "2V3ZZepteeE",
+        "isBlueprint": true
+    },
+    {
+        "id": "tip-1",
+        "title": "Optymalizacja kodu i czysta architektura",
+        "content": "Stosuj zasady SOLID oraz KISS (Keep It Simple). Profiluj wąskie gardła algorytmiczne przed przedwczesną optymalizacją.",
+        "type": "tip",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.140Z",
+        "isPermanent": true,
+        "category": "Programowanie",
+        "tags": [
+            "kod",
+            "architektura",
+            "optymalizacja"
+        ]
+    },
+    {
+        "id": "tip-2",
+        "title": "Technika Pomodoro i głęboka koncentracja",
+        "content": "Bloki pracy 25 minut bez rozpraszaczy, 5 minut przerwy. Po 4 blokach zrób 20-minutową przerwę na regenerację kory mózgowej.",
+        "type": "tip",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.141Z",
+        "isPermanent": true,
+        "category": "Produktywność",
+        "tags": [
+            "pomodoro",
+            "koncentracja",
+            "nawyki"
+        ]
+    },
+    {
+        "id": "tip-3",
+        "title": "Zasada bezpieczeństwa tokenów i kluczy API",
+        "content": "Nigdy nie umieszczaj kluczy API (np. GEMINI_API_KEY) po stronie klienta (w przeglądarce). Wszystkie wywołania proxy wykonuj przez serwer Express.",
+        "type": "tip",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.141Z",
+        "isPermanent": true,
+        "category": "Cyberbezpieczeństwo",
+        "tags": [
+            "api-key",
+            "bezpieczeństwo",
+            "backend"
+        ]
+    },
+    {
+        "id": "tip-4",
+        "title": "Zasada Pareto 80/20 w projektach Starka",
+        "content": "80% kluczowych rezultatów i funkcjonalności pochodzi z 20% najistotniejszych działań architektonicznych.",
+        "type": "tip",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.141Z",
+        "isPermanent": true,
+        "category": "Strategia",
+        "tags": [
+            "pareto",
+            "priorytety",
+            "efektywność"
+        ]
+    },
+    {
+        "id": "fact-1",
+        "title": "Konfiguracja rdzenia Stark OS & Turbo 10X",
+        "content": "Główny rdzeń operuje w trybie przyspieszenia Turbo 10X z zachowaniem 14-dniowej retencji rozmów i bezterminowej pamięci wskazówek.",
+        "type": "fact",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.141Z",
+        "isPermanent": true,
+        "category": "System",
+        "tags": [
+            "stacja",
+            "stark-os",
+            "pamięć"
+        ]
+    },
+    {
+        "id": "directive-1",
+        "title": "Dyrektywa nadrzędnej lojalności i charyzmy",
+        "content": "Zawsze odpowiadaj z elegancją, szacunkiem i dowcipem asystenta Tony'ego Starka, zachowując nienaganną precyzję inżynieryjną.",
+        "type": "directive",
+        "source": "system_default",
+        "createdAt": "2026-09-01T10:11:48.141Z",
+        "isPermanent": true,
+        "category": "Dyrektywy",
+        "tags": [
+            "stark",
+            "lojalność",
+            "jarvis"
+        ]
+    }
+]
